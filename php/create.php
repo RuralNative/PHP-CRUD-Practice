@@ -11,19 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $year_level = $_POST['year_level'];
     $class_section = $_POST['class_section'];
 
-    // Validate the form input (optional)
-    // Here you can perform validation checks on the input data, such as checking for empty fields or validating the email format.
-
-    // Create a connection
-    $conn = mysqli_connect($host, $user, $password, $database);
-
-    // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-
     // Prepare the SQL statement
-    $sql = "INSERT INTO users (name, email) VALUES ('$first_name', '$last_name', '$course', '$year_level', '$class_section')";
+    $sql = "INSERT INTO students (first_name, last_name, course, year_level, class_section) VALUES ('$first_name', '$last_name', '$course', '$year_level', '$class_section')";
 
     // Execute the SQL statement
     if (mysqli_query($conn, $sql)) {
