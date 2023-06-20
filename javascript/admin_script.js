@@ -21,3 +21,14 @@ $(document).ready(function(){
 		}
 	});
 });
+
+$(document).on('show.bs.modal', '#editEmployeeModal', function(event) {
+    var link = $(event.relatedTarget); // Get the link that triggered the modal
+    var studentId = link.data('student-id'); // Get the value of data-student-id attribute
+    
+    // Set the value in the form input field
+    $('#studentIdInput').val(studentId);
+});
+  
+  
+  
