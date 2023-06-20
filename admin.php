@@ -6,8 +6,7 @@
     <title>Cenphilian - Admin</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="/javascript/admin_script.js"></script>
+	<script src="javascript/admin_script.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -66,7 +65,7 @@
 					</div>
 					<div class="modal-body">
 						<div class="form-group">
-							<input type="hidden" id="studentIdInput" name="studentId">
+							<input type="number" class="form-control" id="studentIdInput" name="studentId">
 						</div>					
 						<div class="form-group">
 							<label>First Name</label>
@@ -97,6 +96,23 @@
 			</div>
 		</div>
 	</div>
+
+	<script>
+	$(document).ready(function() {
+	$(document).on('show.bs.modal', '#editEmployeeModal', function(event) {
+	  var link = $(event.relatedTarget);
+	  console.log(link); // Check the value of link
+	  var studentId = link.data('student-id');
+	  console.log(studentId); // Check the value of studentId
+	  
+	  var studentIdInput = $('#studentIdInput');
+	  console.log(studentIdInput); // Check the value of studentIdInput
+  
+	  studentIdInput.val(studentId);
+	});
+  });
+</script>
+
 	<!-- Delete Modal HTML -->
 	<div id="deleteEmployeeModal" class="modal fade">
 		<div class="modal-dialog">

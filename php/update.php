@@ -3,7 +3,7 @@ include_once ("config.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the submitted form data
-    $id = $_GET['id'];
+    $id = $_POST['studentId'];
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $course = $_POST['course'];
@@ -20,10 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Execute the update statement
     if ($stmt->execute()) {
         // Update successful
-        echo $id;
-        echo $first_name;
-        echo "Update successful";
-        echo "Update successful";
+        header("Location: ../admin.php");
     } else {
         // Update failed
         echo "Update failed";
