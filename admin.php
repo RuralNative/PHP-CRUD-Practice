@@ -110,14 +110,14 @@
   
 	  studentIdInput.val(studentId);
 	});
-  });
-</script>
+  	});
+	</script>
 
 	<!-- Delete Modal HTML -->
 	<div id="deleteEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form>
+				<form id="deleteForm" method="POST" action="php/delete.php">
 					<div class="modal-header">						
 						<h4 class="modal-title">Delete Employee</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -127,6 +127,7 @@
 						<p class="text-warning"><small>This action cannot be undone.</small></p>
 					</div>
 					<div class="modal-footer">
+						<input type="hidden" id="studentIdValue" name="studentIdValue">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
 						<input type="submit" class="btn btn-danger" value="Delete">
 					</div>
@@ -134,5 +135,21 @@
 			</div>
 		</div>
 	</div>
+
+	<script>
+	$(document).ready(function() {
+	$(document).on('show.bs.modal', '#deleteEmployeeModal', function(event) {
+	  var link = $(event.relatedTarget);
+	  console.log(link); // Check the value of link
+	  var studentId = link.data('student-id-value');
+	  console.log(studentId); // Check the value of studentId
+	  
+	  var studentIdInput = $('#studentIdValue');
+	  console.log(studentIdInput); // Check the value of studentIdInput
+  
+	  studentIdInput.val(studentId);
+	});
+  	});
+	</script>
 </body>
 </html>
