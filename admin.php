@@ -53,70 +53,35 @@
 		</div>        
     </div>
 	<!-- Edit Modal HTML -->
-	<div id="addStudentModal" class="modal fade">
+	<div id="editEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form>
+				<form method="POST" action="php/update.php">
 					<div class="modal-header">						
-						<h4 class="modal-title">Add Students</h4>
+						<h4 class="modal-title">Edit Student</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">					
 						<div class="form-group">
 							<label>First Name</label>
-							<input type="text" class="form-control" required>
+							<input type="text" class="form-control" name="first_name" required>
 						</div>
 						<div class="form-group">
 							<label>Last Name</label>
-							<input type="email" class="form-control" required>
+							<input type="text" class="form-control" name="last_name" required>
 						</div>
 						<div class="form-group">
 							<label>Course</label>
-							<textarea class="form-control" required></textarea>
+							<input type="text" class="form-control" name="course" required>
 						</div>
 						<div class="form-group">
 							<label>Year Level</label>
-							<input type="text" class="form-control" required>
+							<input type="text" class="form-control" name="year_level" required>
 						</div>
-                        <div class="form-group">
+						<div class="form-group">
 							<label>Class Section</label>
-							<input type="text" class="form-control" required>
-						</div>					
-					</div>
-					<div class="modal-footer">
-						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btn btn-success" value="Add">
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	<!-- Edit Modal HTML -->
-	<div id="editEmployeeModal" class="modal fade">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<form>
-					<div class="modal-header">						
-						<h4 class="modal-title">Edit Employee</h4>
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					</div>
-					<div class="modal-body">					
-						<div class="form-group">
-							<label>Name</label>
-							<input type="text" class="form-control" required>
-						</div>
-						<div class="form-group">
-							<label>Email</label>
-							<input type="email" class="form-control" required>
-						</div>
-						<div class="form-group">
-							<label>Address</label>
-							<textarea class="form-control" required></textarea>
-						</div>
-						<div class="form-group">
-							<label>Phone</label>
-							<input type="text" class="form-control" required>
-						</div>					
+							<input type="text" class="form-control" name="class_section" required>
+						</div>				
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
