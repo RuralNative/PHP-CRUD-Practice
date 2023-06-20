@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Execute the SQL statement
     if (mysqli_query($conn, $sql)) {
-        echo "Record created successfully.";
+        header("Location: ../index.html");
     } else {
         echo "Error creating record: " . mysqli_error($conn);
     }
